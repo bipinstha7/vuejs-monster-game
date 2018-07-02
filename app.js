@@ -27,7 +27,13 @@ new Vue({
       this.checkWin();
     },
     heal: function() {
-
+      this.playerHealth +=10;
+      if (this.playerHealth <= 90) {
+        this.playerHealth += 10;
+      } else {
+        this.playerHealth = 100;
+      }
+      this.playerHealth -= this.calculateDamage(5, 12);
     },
     giveUp: function() {
 
