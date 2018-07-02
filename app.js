@@ -36,7 +36,9 @@ new Vue({
       this.playerHealth -= this.calculateDamage(5, 12);
     },
     giveUp: function() {
-
+      this.gameIsRunning = false;
+      this.playerHealth = 100;
+      this.monsterHealth = 100;
     },
     calculateDamage: function(min, max) {
       return Math.max(Math.floor(Math.random() * max) + 1, min);
